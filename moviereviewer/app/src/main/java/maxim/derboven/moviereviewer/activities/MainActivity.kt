@@ -1,11 +1,11 @@
-package maxim.derboven.moviereviewer
+package maxim.derboven.moviereviewer.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import maxim.derboven.moviereviewer.R
 import maxim.derboven.moviereviewer.model.getMovies
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         btnNext.setOnClickListener{next()};
         btnPrevious.setOnClickListener{previous()};
+
+        counter=intent.getIntExtra("positie",0)
         fillInfo(counter);
     }
 
@@ -62,7 +64,9 @@ class MainActivity : AppCompatActivity() {
         txtRuntime.text = getMovies()[id].runtime.toString() + "min.";
         txtTitle.text = getMovies()[id].title;
 
-        imgPoster.setImageResource(getResources().getIdentifier("@drawable/"+getMovies()[id].poster, null, getPackageName()))
+        imgPoster.setImageResource(resources.getIdentifier("@drawable/"+getMovies()[id].poster, null,
+            packageName
+        ))
         if (getMovies()[id].comingSoon) {
             imgComingsoon.setImageResource(R.drawable.comingsoon)
         } else {imgComingsoon.setImageDrawable(null)}
