@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">moviereviewer</string>
+    <string name="app_name">Movies</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="title">Title</string>
     <string name="plot">Lorem Ipsum Plot</string>
     <string name="releasedate">12 nov. 2020</string>
     <string name="runtime">127 min.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

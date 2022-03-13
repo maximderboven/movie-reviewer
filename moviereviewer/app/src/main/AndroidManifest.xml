@@ -10,10 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Moviereviewer">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".fragments.MoviesListFragment"
             android:exported="false" />
         <activity
-            android:name=".activities.ItemsActivity"
+            android:name=".fragments.MoviesFragment"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FragmentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
