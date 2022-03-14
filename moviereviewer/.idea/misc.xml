@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout-land/activity_main.xml" value="0.25044091710758376" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout-land/fragment_movies.xml" value="0.25044091710758376" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout-land/list_movie.xml" value="0.25044091710758376" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/activity_navigation.xml" value="0.3754528985507246" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/activity_overview.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/app_bar_navigation.xml" value="0.3754528985507246" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/content_navigation.xml" value="0.5364583333333334" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/fragment_movies.xml" value="0.29583333333333334" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/fragment_movies_list.xml" value="0.3754528985507246" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/fragment_overview.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/fragment_posters.xml" value="0.1933876811594203" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/fragment_random_movie.xml" value="0.3754528985507246" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/list_movie.xml" value="0.3754528985507246" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/nav_header_navigation.xml" value="0.2608915906788247" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/layout/poster_item.xml" value="0.425" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.29583333333333334" />
+        <entry key="..\:/Users/jonas/OneDrive/School/KDG/2021-2022/User Interfaces/moviereviewer_ui_21-22-main/moviereviewer/app/src/main/res/menu/navigation.xml" value="0.29583333333333334" />
         <entry key="..\:/Users/maxim/Desktop/moviereviewer/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/layout-land/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/layout-land/fragment_movies.xml" value="0.25" />
@@ -18,6 +35,8 @@
         <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/layout/item_view.xml" value="0.2" />
         <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/layout/list_item.xml" value="0.33" />
         <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/layout/list_movie.xml" value="0.25" />
+        <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/layout/nav_header_navigation.xml" value="0.1259259259259259" />
+        <entry key="..\:/Users/maxim/OneDrive - Karel de Grote Hogeschool/2de jaar/User Interfaces 2/moviereviewer_ui_21-22/moviereviewer/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.18503401360544217" />
       </map>
     </option>
   </component>

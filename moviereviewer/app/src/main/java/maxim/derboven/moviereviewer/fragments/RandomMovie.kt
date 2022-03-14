@@ -1,19 +1,21 @@
 package maxim.derboven.moviereviewer.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import maxim.derboven.moviereviewer.R
 import maxim.derboven.moviereviewer.model.Movie
 import maxim.derboven.moviereviewer.model.getMovies
+import kotlin.random.Random
 
-class MoviesFragment : Fragment(R.layout.fragment_movies) {
+class RandomMovie : Fragment(R.layout.fragment_movies) {
 
     //knoppen
-    var counter = 0;
+    lateinit var dataset: Array<Movie>
+    var counter: Int = 0
     lateinit var btnNext: Button;
     lateinit var btnPrevious: Button;
 
@@ -27,11 +29,13 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     lateinit var imgComingsoon: ImageView;
     lateinit var imgPoster: ImageView;
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.onCreate(savedInstanceState)
+
+        dataset = getMovies()
+        counter = Random.nextInt(dataset.size)
+
         btnNext = view.findViewById(R.id.btnNext);
         btnPrevious = view.findViewById(R.id.btnPrevious);
         txtTitle = view.findViewById(R.id.txtTitle);
@@ -43,7 +47,7 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
         btnNext.setOnClickListener{next()};
         btnPrevious.setOnClickListener{previous()};
-        fillInfo(0);
+        fillInfo(counter);
     }
 
     private fun previous() {
@@ -58,25 +62,23 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
     fun fillInfo(pos:Int?) {
         btnPrevious.isEnabled = counter != 0
-        btnNext.isEnabled = counter != getMovies().size-1
-        val data = getMovies()
+        btnNext.isEnabled = counter != dataset.size-1
         var index:Int=0
         if (pos != null) {
             index=pos;
         }
-        print(data[index].plot)
+        print(dataset[index].plot)
         print(index);
-        txtPlot.text = data[index].plot;
-        txtReleasedate.text = data[index].released.toString();
-        txtRuntime.text = data[index].runtime.toString() + "min.";
-        txtTitle.text = data[index].title;
+        txtPlot.text = dataset[index].plot;
+        txtReleasedate.text = dataset[index].released.toString();
+        txtRuntime.text = dataset[index].runtime.toString() + "min.";
+        txtTitle.text = dataset[index].title;
 
-        imgPoster.setImageResource(resources.getIdentifier("@drawable/"+data[index].poster, null,
+        imgPoster.setImageResource(resources.getIdentifier("@drawable/"+dataset[index].poster, null,
             activity?.packageName
         ))
-        if (data[index].comingSoon) {
+        if (dataset[index].comingSoon) {
             imgComingsoon.setImageResource(R.drawable.comingsoon)
         } else {imgComingsoon.setImageDrawable(null)}
     }
-
 }

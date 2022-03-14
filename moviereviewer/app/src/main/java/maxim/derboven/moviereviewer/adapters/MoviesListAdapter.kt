@@ -50,9 +50,9 @@ class MoviesListAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.txtItem_releasedate.text = getMovies()[position].released.toString();
-        holder.txtItem_runtime.text = getMovies()[position].runtime.toString() + " min.";
-        holder.txtItem_title.text = getMovies()[position].title;
+        holder.txtItem_releasedate.text = dataset[position].released.toString();
+        holder.txtItem_runtime.text = dataset[position].runtime.toString() + " min.";
+        holder.txtItem_title.text = dataset[position].title;
         holder.imgItem_poster.setImageResource(context.getResources().getIdentifier("@drawable/"+ getMovies()[position].poster, null, context.activity?.packageName))
     }
 

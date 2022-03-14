@@ -1,6 +1,5 @@
 package maxim.derboven.moviereviewer.fragments
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -11,6 +10,7 @@ import maxim.derboven.moviereviewer.model.getMovies
 
 
 class MoviesListFragment : Fragment(R.layout.fragment_movies_list) {
+
     lateinit var recyclerView: RecyclerView;
     lateinit var mCallback: ItemClicked;
 
@@ -30,12 +30,7 @@ class MoviesListFragment : Fragment(R.layout.fragment_movies_list) {
         var adapter = MoviesListAdapter(this, getMovies())
         recyclerView.adapter = adapter
 
-        mCallback = try {
-            activity as ItemClicked
-        } catch (e: ClassCastException) {
-            throw ClassCastException("$activity must implement ItemClicked")
-        }
-
+        mCallback = parentFragment as OverviewFragment
         adapter.setOnItemClickListener(object : MoviesListAdapter.onItemClickListener {
             override fun onItemClick(position: Int) {
                 mCallback.changeMovie(position)
