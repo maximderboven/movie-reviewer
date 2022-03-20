@@ -79,4 +79,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         } else {imgComingsoon.setImageDrawable(null)}
     }
 
+
+
 }

@@ -3,15 +3,18 @@ package maxim.derboven.moviereviewer.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import maxim.derboven.moviereviewer.R
 import maxim.derboven.moviereviewer.adapters.MoviesListAdapter
 import maxim.derboven.moviereviewer.model.getMovies
+import maxim.derboven.moviereviewer.view_models.MovieViewModel
 
 
 class MoviesListFragment : Fragment(R.layout.fragment_movies_list) {
 
     lateinit var recyclerView: RecyclerView;
+    lateinit var viewmodel: View
     lateinit var mCallback: ItemClicked;
 
 //    override fun onCreateView(
@@ -24,6 +27,9 @@ class MoviesListFragment : Fragment(R.layout.fragment_movies_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewmodel = view
+
         recyclerView  = view.findViewById(R.id.rv_items)
         recyclerView.setHasFixedSize(true)
 
