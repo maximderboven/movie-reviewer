@@ -18,6 +18,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -44,6 +45,7 @@ class RestClient {
     private val _reviews: MutableLiveData<List<Review>> by lazy {
         MutableLiveData<List<Review>>()
     }
+
     val reviews: LiveData<List<Review>> by lazy {
         return@lazy _reviews
     }
@@ -89,5 +91,5 @@ interface IRestClient {
     fun getAllMovies(): Call<List<MovieDataModel>>
 
     @GET("reviews")
-    fun getReviewsFromMovie(@Path("movieId") movieId: Int): Call<List<Review>>
+    fun getReviewsFromMovie(@Query("movieId") movieId: Int): Call<List<Review>>
 }

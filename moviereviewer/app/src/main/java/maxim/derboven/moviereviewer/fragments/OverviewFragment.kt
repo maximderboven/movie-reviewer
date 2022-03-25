@@ -36,11 +36,13 @@ class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked,
                 childFragmentManager.beginTransaction()
                     .hide(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
                     .show(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
+                    .hide(childFragmentManager.findFragmentById(R.id.fragment_reviews)!!)
                     .commit()
             } else {
                 childFragmentManager.beginTransaction()
                     .show(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
                     .hide(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
+                    .hide(childFragmentManager.findFragmentById(R.id.fragment_reviews)!!)
                     .addToBackStack(null)
                     .commit()
             }
@@ -51,6 +53,7 @@ class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked,
             childFragmentManager.beginTransaction()
                 .show(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
                 .show(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
+                .hide(childFragmentManager.findFragmentById(R.id.fragment_reviews)!!)
                 .commit()
         }
     }
@@ -65,6 +68,7 @@ class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked,
             childFragmentManager.beginTransaction()
                 .show(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
                 .hide(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
+                .hide(childFragmentManager.findFragmentById(R.id.fragment_reviews)!!)
                 .addToBackStack(null)
                 .commit()
         }
@@ -74,15 +78,12 @@ class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked,
 
         val frag: ReviewsFragment? = childFragmentManager.findFragmentById(R.id.fragment_reviews) as ReviewsFragment?
 
-        //the phone is in portrait mode
-        if (view?.findViewById<View>(R.id.layout_default) != null) {
             childFragmentManager.beginTransaction()
                 .hide(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
                 .hide(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
                 .show(childFragmentManager.findFragmentById(R.id.fragment_reviews)!!)
                 .addToBackStack(null)
                 .commit()
-        }
     }
 
 }

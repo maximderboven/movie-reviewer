@@ -6,8 +6,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import maxim.derboven.moviereviewer.R
-import maxim.derboven.moviereviewer.adapters.ReviewsAdapter
 import maxim.derboven.moviereviewer.model.getMovies
 
 
@@ -33,7 +34,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     val data = getMovies()
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.onCreate(savedInstanceState)
@@ -47,10 +47,17 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         imgPoster = view.findViewById(R.id.imgPoster);
         btnReviews = view.findViewById(R.id.btnDetails)
 
-        btnNext.setOnClickListener{next()};
-        btnPrevious.setOnClickListener{previous()};
+        btnNext.setOnClickListener { next() };
+        btnPrevious.setOnClickListener { previous() };
+        val fragment = ReviewsFragment()
+        btnReviews.setOnClickListener {
 
-        btnReviews.setOnClickListener { mCallback.showReviews(counter,data[counter].title) }
+            val fragmentTransaction : FragmentTransaction?  = getActivity()?.getSupportFragmentManager()?.beginTransaction()
+            fragmentTransaction?.addToBackStack(null);
+            fragmentTransaction?.replace(R.id.fragment_details, fragment)
+            fragmentTransaction?.remove(MoviesFragment())
+            fragmentTransaction?.commit()
+        }
 
         fillInfo(0);
     }
@@ -65,12 +72,12 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         btnPrevious.isEnabled = true;
     }
 
-    fun fillInfo(pos:Int?) {
+    fun fillInfo(pos: Int?) {
         btnPrevious.isEnabled = counter != 0
-        btnNext.isEnabled = counter != data.size-1
-        var index:Int=0
+        btnNext.isEnabled = counter != data.size - 1
+        var index: Int = 0
         if (pos != null) {
-            index=pos;
+            index = pos;
         }
         print(data[index].plot)
         print(index);
@@ -79,19 +86,20 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         txtRuntime.text = data[index].runtime.toString() + "min.";
         txtTitle.text = data[index].title;
 
-        imgPoster.setImageResource(resources.getIdentifier("@drawable/"+data[index].poster, null,
-            activity?.packageName
-        ))
+        imgPoster.setImageResource(
+            resources.getIdentifier(
+                "@drawable/" + data[index].poster, null,
+                activity?.packageName
+            )
+        )
         if (data[index].comingSoon) {
             imgComingsoon.setImageResource(R.drawable.comingsoon)
-        } else {imgComingsoon.setImageDrawable(null)}
+        } else {
+            imgComingsoon.setImageDrawable(null)
+        }
     }
 
     interface ReviewClicked {
-        fun showReviews(movieId: Int,movieTitle:String)
+        fun showReviews(movieId: Int, movieTitle: String)
     }
-}
-
-private fun Button.setOnClickListener(onItemClickListener: ReviewsAdapter.onItemClickListener) {
-
 }
