@@ -20,6 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#DFDCDC" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_reviews"
+            android:name="maxim.derboven.moviereviewer.fragments.ReviewsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_details"

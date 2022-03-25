@@ -9,7 +9,8 @@ import androidx.core.app.ActivityCompat
 import maxim.derboven.moviereviewer.R
 import maxim.derboven.moviereviewer.activities.NavigationActivity
 
-class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked {
+class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked,
+    MoviesFragment.ReviewClicked {
 
     private var savedInstanceState: Bundle? = null
 
@@ -56,8 +57,7 @@ class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked {
 
     override fun changeMovie(pos: Int) {
 
-        val frag: MoviesFragment? =
-            childFragmentManager.findFragmentById(R.id.fragment_details) as MoviesFragment?
+        val frag: MoviesFragment? = childFragmentManager.findFragmentById(R.id.fragment_details) as MoviesFragment?
         frag?.fillInfo(pos)
 
         //the phone is in portrait mode
@@ -65,6 +65,21 @@ class OverviewFragment : Fragment(), MoviesListFragment.ItemClicked {
             childFragmentManager.beginTransaction()
                 .show(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
                 .hide(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
+    override fun showReviews(movieId: Int, movieTitle: String) {
+
+        val frag: ReviewsFragment? = childFragmentManager.findFragmentById(R.id.fragment_reviews) as ReviewsFragment?
+
+        //the phone is in portrait mode
+        if (view?.findViewById<View>(R.id.layout_default) != null) {
+            childFragmentManager.beginTransaction()
+                .hide(childFragmentManager.findFragmentById(R.id.fragment_details)!!)
+                .hide(childFragmentManager.findFragmentById(R.id.fragment_list)!!)
+                .show(childFragmentManager.findFragmentById(R.id.fragment_reviews)!!)
                 .addToBackStack(null)
                 .commit()
         }

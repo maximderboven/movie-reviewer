@@ -1,5 +1,7 @@
 package maxim.derboven.moviereviewer.model
 
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import java.time.LocalDate
 
 data class Movie(

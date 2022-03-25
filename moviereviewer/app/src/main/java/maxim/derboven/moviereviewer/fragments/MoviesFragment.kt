@@ -7,8 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import maxim.derboven.moviereviewer.R
-import maxim.derboven.moviereviewer.model.Movie
+import maxim.derboven.moviereviewer.adapters.ReviewsAdapter
 import maxim.derboven.moviereviewer.model.getMovies
+
 
 class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
@@ -16,6 +17,7 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     var counter = 0;
     lateinit var btnNext: Button;
     lateinit var btnPrevious: Button;
+    lateinit var btnReviews: Button;
 
     //textvelden
     lateinit var txtTitle: TextView;
@@ -26,6 +28,9 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     //images
     lateinit var imgComingsoon: ImageView;
     lateinit var imgPoster: ImageView;
+
+    lateinit var mCallback: ReviewClicked;
+    val data = getMovies()
 
 
 
@@ -40,9 +45,13 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         txtPlot = view.findViewById(R.id.txtPlot);
         imgComingsoon = view.findViewById(R.id.imgComingsoon);
         imgPoster = view.findViewById(R.id.imgPoster);
+        btnReviews = view.findViewById(R.id.btnDetails)
 
         btnNext.setOnClickListener{next()};
         btnPrevious.setOnClickListener{previous()};
+
+        btnReviews.setOnClickListener { mCallback.showReviews(counter,data[counter].title) }
+
         fillInfo(0);
     }
 
@@ -58,8 +67,7 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
     fun fillInfo(pos:Int?) {
         btnPrevious.isEnabled = counter != 0
-        btnNext.isEnabled = counter != getMovies().size-1
-        val data = getMovies()
+        btnNext.isEnabled = counter != data.size-1
         var index:Int=0
         if (pos != null) {
             index=pos;
@@ -79,6 +87,11 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         } else {imgComingsoon.setImageDrawable(null)}
     }
 
+    interface ReviewClicked {
+        fun showReviews(movieId: Int,movieTitle:String)
+    }
+}
 
+private fun Button.setOnClickListener(onItemClickListener: ReviewsAdapter.onItemClickListener) {
 
 }
