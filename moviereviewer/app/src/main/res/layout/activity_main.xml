@@ -15,22 +15,10 @@
         tools:context=".activities.FragmentActivity">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_list"
+            android:id="@+id/content"
             android:name="maxim.derboven.moviereviewer.fragments.MoviesListFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#DFDCDC" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_reviews"
-            android:name="maxim.derboven.moviereviewer.fragments.MoviesFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_details"
-            android:name="maxim.derboven.moviereviewer.fragments.MoviesFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

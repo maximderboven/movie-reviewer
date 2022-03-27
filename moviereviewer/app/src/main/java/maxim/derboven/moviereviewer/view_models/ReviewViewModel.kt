@@ -6,10 +6,9 @@ import maxim.derboven.moviereviewer.model.Movie
 import maxim.derboven.moviereviewer.model.Review
 import maxim.derboven.moviereviewer.services.RestClient
 
-class ReviewViewModel: ViewModel() {
+class ReviewViewModel(): ViewModel() {
     val restClient: RestClient = RestClient()
-    init {
-        restClient.fetchReviewsFromMovie(1)
+    fun getReviewsFromMovie(id:Int) {
+        restClient.fetchReviewsFromMovie(id+1)
     }
-    val movies: LiveData<List<Review>> = restClient.reviews
 }

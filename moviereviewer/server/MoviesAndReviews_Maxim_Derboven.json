@@ -167,7 +167,7 @@
       "id": 1,
       "author": "Milly Milne",
       "rating": 2,
-      "comment": "Weak ending.",
+      "comment": "AVATAR: Weak ending.",
       "createdAt": "2017-01-08",
       "published": true,
       "movieId": 1
@@ -176,7 +176,7 @@
       "id": 2,
       "author": "Daisy Gaines",
       "rating": 4,
-      "comment": "Loved it!",
+      "comment": "AVATAR: Loved it!",
       "createdAt": "2008-02-14",
       "published": true,
       "movieId": 1
@@ -185,7 +185,7 @@
       "id": 3,
       "author": "Ava-May Oneill",
       "rating": 5,
-      "comment": "The director claimed this movie would be \"faithful\" to the games, and yet somehow it ended up being as far from that statement as possible. I knew from the moment I saw the trailers, casting, and heard about the odd crossover plot that this film would be a disaster-- and it was far worse than...",
+      "comment": "AVATAR: The director claimed this movie would be \"faithful\" to the games, and yet somehow it ended up being as far from that statement as possible. I knew from the moment I saw the trailers, casting, and heard about the odd crossover plot that this film would be a disaster-- and it was far worse than...",
       "createdAt": "2016-09-10",
       "published": false,
       "movieId": 1
@@ -194,7 +194,7 @@
       "id": 4,
       "author": "Reanne Munoz",
       "rating": 3,
-      "comment": "I found this movie very very interesting, watched it with family. it is a must watch...",
+      "comment": "I Am Legend: I found this movie very very interesting, watched it with family. it is a must watch...",
       "createdAt": "2014-08-07",
       "published": true,
       "movieId": 2
@@ -203,7 +203,7 @@
       "id": 5,
       "author": "Soren Edwards",
       "rating": 2,
-      "comment": "it's getting boring season after season. kind of same thing going over for a long time.",
+      "comment": "AVATAR: it's getting boring season after season. kind of same thing going over for a long time.",
       "createdAt": "2009-10-14",
       "published": true,
       "movieId": 1
@@ -212,7 +212,7 @@
       "id": 6,
       "author": "Mandeep Sparks",
       "rating": 5,
-      "comment": "Excellent",
+      "comment": "300: Excellent",
       "createdAt": "2010-07-15",
       "published": true,
       "movieId": 3
@@ -221,7 +221,7 @@
       "id": 7,
       "author": "Denis Elliott",
       "rating": 1,
-      "comment": "Absolutely great movie I loved it with my all heart❤",
+      "comment": "AVENGERS: Absolutely great movie I loved it with my all heart❤",
       "createdAt": "2007-05-09",
       "published": true,
       "movieId": 4
@@ -230,7 +230,7 @@
       "id": 8,
       "author": "Uzma Brock",
       "rating": 4,
-      "comment": "👍👍",
+      "comment": "GOT: 👍👍",
       "createdAt": "2006-08-12",
       "published": true,
       "movieId": 7
@@ -239,7 +239,7 @@
       "id": 9,
       "author": "Tyrese Wills",
       "rating": 3,
-      "comment": "Though its an animated movie not bounded for kids but all ages can enjoy this movie.Especially the humour in movie make sense",
+      "comment": "POWER: Though its an animated movie not bounded for kids but all ages can enjoy this movie.Especially the humour in movie make sense",
       "createdAt": "2010-07-07",
       "published": true,
       "movieId": 10
@@ -248,7 +248,7 @@
       "id": 10,
       "author": "Parker Goodwin",
       "rating": 4,
-      "comment": "Disney keep it up with its own set standards. Fantastic movie",
+      "comment": "NARCOS: Disney keep it up with its own set standards. Fantastic movie",
       "createdAt": "2005-02-21",
       "published": true,
       "movieId": 11
@@ -257,7 +257,7 @@
       "id": 11,
       "author": "Thomas Donnosa",
       "rating": 4,
-      "comment": "An Extraordinary Animated Film for Everyone",
+      "comment": "VIKINGS: An Extraordinary Animated Film for Everyone",
       "createdAt": "2011-01-09",
       "published": true,
       "movieId": 8

@@ -18,6 +18,7 @@ class RandomMovie : Fragment(R.layout.fragment_movies) {
     var counter: Int = 0
     lateinit var btnNext: Button;
     lateinit var btnPrevious: Button;
+    lateinit var btnReviews: Button;
 
     //textvelden
     lateinit var txtTitle: TextView;

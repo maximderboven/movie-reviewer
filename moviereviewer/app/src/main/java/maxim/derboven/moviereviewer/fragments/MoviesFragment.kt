@@ -12,7 +12,7 @@ import maxim.derboven.moviereviewer.R
 import maxim.derboven.moviereviewer.model.getMovies
 
 
-class MoviesFragment : Fragment(R.layout.fragment_movies) {
+class MoviesFragment() : Fragment(R.layout.fragment_movies) {
 
     //knoppen
     var counter = 0;
@@ -47,19 +47,21 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         imgPoster = view.findViewById(R.id.imgPoster);
         btnReviews = view.findViewById(R.id.btnDetails)
 
-        btnNext.setOnClickListener { next() };
-        btnPrevious.setOnClickListener { previous() };
-        val fragment = ReviewsFragment()
-        btnReviews.setOnClickListener {
-
-            val fragmentTransaction : FragmentTransaction?  = getActivity()?.getSupportFragmentManager()?.beginTransaction()
-            fragmentTransaction?.addToBackStack(null);
-            fragmentTransaction?.replace(R.id.fragment_details, fragment)
-            fragmentTransaction?.remove(MoviesFragment())
-            fragmentTransaction?.commit()
+        if(arguments?.getInt("movieId") != null) {
+            counter = arguments?.getInt("movieId")!!
+        } else {
+            counter = 0
         }
 
-        fillInfo(0);
+
+        btnNext.setOnClickListener { next() };
+        btnPrevious.setOnClickListener { previous() };
+        mCallback = parentFragment as OverviewFragment
+        btnReviews.setOnClickListener {
+            mCallback.showReviews(counter,data[counter].title)
+        }
+
+        fillInfo(counter);
     }
 
     private fun previous() {

@@ -40,6 +40,14 @@ class ReviewsFragment() : Fragment(R.layout.fragment_reviews) {
         val adapter = ReviewsAdapter(this)
         binding.rvItems.adapter= adapter
         binding.rvItems.setHasFixedSize(false)
+        val id: Int
+        if (arguments?.getInt("MovieIDKey") == null) {
+            id=0
+        }else {
+            id = requireArguments().getInt("MovieIDKey")
+        }
+
+        viewModel.getReviewsFromMovie(id)
 
         viewModel.restClient.reviews.observe(viewLifecycleOwner, Observer{
             val adapter = (binding.rvItems.adapter!! as ReviewsAdapter)
